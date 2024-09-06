@@ -63,7 +63,7 @@ def clean_text(text, slang_dict):
 def preprocess_text(text, slang_dict):
     # Create a dictionary of cleaned steps
     url_removed = remove_urls(text)
-    lowercased = to_lowercase(text)
+    lowercased = to_lowercase(url_removed)
     punctuation_removed = remove_punctuation(lowercased)
     tokens = word_tokenize(punctuation_removed)
     stopwords_removed = remove_stopwords(tokens)

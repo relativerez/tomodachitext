@@ -22,7 +22,7 @@ if uploaded_file is not None:
     
     # Display the uploaded data
     st.write("Dataset anda:")
-    st.write(df.head())
+    st.dataframe(df)
     
     # Select columns to clean
     columns_to_clean = st.multiselect("Pilih Kolom yang Ingin di Bersihkan", df.columns.tolist())
@@ -78,7 +78,7 @@ if uploaded_file is not None:
         status_message.text("Text Processing Selesai!")
         
         st.write("Dataset Bersih:")
-        st.write(df.head())
+        st.dataframe(df)
         
         # Option to download cleaned data
         st.download_button(
@@ -128,7 +128,7 @@ if st.button("Tambah Slang"):
                             df[f'{col}_slang_normalisasi'] = df[col].apply(lambda x: preprocess_text(x, st.session_state.slang_dict)['Slang Normalisasi'] if pd.notnull(x) else '')
                 
                 st.write("Dataset Bersih setelah update slang:")
-                st.write(df.head())
+                st.dataframe(df)
                 
                 st.download_button(
                     label="Download Dataset Bersih Sebagai CSV",

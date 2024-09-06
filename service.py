@@ -5,9 +5,15 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
+<<<<<<< HEAD
 nltk.download("punkt")
 nltk.download("punkt_tab")
 nltk.download("stopwords")
+=======
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('punkt_tab')
+>>>>>>> ba5b31109f566bc270b7d1194971a839c9db3777
 
 # Initialize the stemmer
 stemmer = PorterStemmer()
